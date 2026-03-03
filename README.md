@@ -1,46 +1,91 @@
-# Astro Starter Kit: Basics
+# WebPrestamos
 
-```sh
-npm create astro@latest -- --template basics
+A modern web application for loan management built with [Astro](https://astro.build). This project provides a lightweight, fast frontend with static site generation and includes Docker support for easy deployment.
+
+## Features
+
+- **Astro 5** – Fast, content‑focused web framework
+- **TypeScript** – Type‑safe development
+- **Docker** – Containerized development and production environments
+- **Zero‑JS by default** – Fast loading, minimal client‑side JavaScript
+- **Responsive layout** – Built‑in responsive design
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js 18+ or later
+- npm (or pnpm, yarn)
+
+### Installation
+
+Clone the repository and install dependencies:
+
+```bash
+git clone <repository-url>
+cd WebPrestamos
+npm install
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+### Development
 
-## 🚀 Project Structure
+Start the development server:
 
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
+```bash
+npm run dev
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+The site will be available at `http://localhost:4321`.
 
-## 🧞 Commands
+### Build
 
-All commands are run from the root of the project, from a terminal:
+Generate a production‑ready static site:
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+```bash
+npm run build
+```
 
-## 👀 Want to learn more?
+The output will be placed in the `dist/` directory.
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+### Preview
+
+Preview the built site locally:
+
+```bash
+npm run preview
+```
+
+## Docker
+
+### Build the Docker Image
+
+```bash
+docker build -t web-prestamos .
+```
+
+### Run the Container
+
+```bash
+docker run -p 3000:3000 web-prestamos
+```
+
+The application will be served on `http://localhost:3000`.
+
+## Project Structure
+
+```
+├── public/          # Static assets (images, fonts, etc.)
+├── src/
+│   ├── assets/      # Project‑specific assets (SVG, backgrounds)
+│   ├── components/  # Reusable Astro components
+│   ├── layouts/     # Page layout components
+│   └── pages/       # Astro pages (routes)
+├── astro.config.mjs # Astro configuration
+├── package.json     # Dependencies and scripts
+├── Dockerfile       # Docker container definition
+└── tsconfig.json   # TypeScript configuration
+```
+
+## License
+
+This project is licensed under the terms of the MIT license. See the LICENSE file for details.
